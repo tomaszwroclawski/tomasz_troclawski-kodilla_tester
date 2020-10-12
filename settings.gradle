@@ -1,2 +1,3 @@
 rootProject.name = 'tomasz-wroclawski-kodilla-tester'
+include 'kodilla-intro'
 
