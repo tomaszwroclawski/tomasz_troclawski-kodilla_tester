@@ -1,3 +1,5 @@
+package module2;
+
 public class Colours {
     enum ColorsName {
         B, /* biały */
@@ -9,7 +11,7 @@ public class Colours {
     }
 
     public static void main(String[] args) {
-        ColorsName ColorsName = Colours.ColorsName.B;
+        ColorsName ColorsName = Colours.ColorsName.M;
         switch (ColorsName) {
             case B:
                 System.out.println("biały");
