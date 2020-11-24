@@ -1,3 +1,5 @@
+package module2;
+
 public class Notebook {
     String weight;
     int price;

@@ -1,3 +1,5 @@
+package module2;
+
 public class SimpeArray {
     public static void main(String[] args){
         String[] books = new String[5];

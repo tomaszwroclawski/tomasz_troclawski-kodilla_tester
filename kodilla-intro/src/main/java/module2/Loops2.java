@@ -1,3 +1,5 @@
+package module2;
+
 public class Loops2 {
     public static void main(String[] args) {
         String[] names = new String[]{"Zygfryd", "Gwidon", "Florentyna", "Eliasz", "Robert","Władek","Józek"};

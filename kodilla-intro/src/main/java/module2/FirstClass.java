@@ -1,3 +1,5 @@
+package module2;
+
 public class FirstClass {
 
     public static void main(String[] args) {
@@ -43,6 +45,8 @@ public class FirstClass {
         notebook.checkYourMoney();
         heavyNotebook.checkYourMoney();
         oldNotebook.checkYourMoney();
+
+
 
 
     }

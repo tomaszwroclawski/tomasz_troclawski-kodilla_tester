@@ -1,3 +1,5 @@
+package module2;
+
 public class Loops {
     public static void main(String[] args) {
         int[] number = new int[5];

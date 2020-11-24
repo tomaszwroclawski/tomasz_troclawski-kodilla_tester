@@ -1,3 +1,5 @@
+package module2;
+
 public class DebugExample {
     public static void main(String[] args) {
         int firstNumber = 11;

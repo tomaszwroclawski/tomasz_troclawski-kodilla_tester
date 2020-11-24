@@ -1,5 +1,8 @@
+package module2;
+
 public class User {
 
+    public double usHigth;
     String usName;
     int usAge;
 
@@ -9,7 +12,6 @@ public class User {
         this.usAge = usAge;
 
     }
-
     public static void main(String[] args) {
         User Krzys = new User("Krzys", 38);
         User Edek= new User("Edek", 36);

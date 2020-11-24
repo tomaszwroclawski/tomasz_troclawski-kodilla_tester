@@ -1,3 +1,5 @@
+package module2;
+
 public class MainExtended {
     public static void main(String[] args) {
         String myName = "Tomasz";
