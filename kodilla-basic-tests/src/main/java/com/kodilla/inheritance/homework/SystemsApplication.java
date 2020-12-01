@@ -1,16 +1,17 @@
 package com.kodilla.inheritance.homework;
 
 public class SystemsApplication {
-    public static void main(String[]args){
-
-        OperatingSystem operatingSystem = new OperatingSystem(2015,2020);
+    public static void main(String[] args) {
+        OperatingSystem operatingSystem = new OperatingSystem(1998);
         operatingSystem.turnOn();
+        operatingSystem.turnOff();
 
-        NewOperatingSystem newOperatingSystem = new NewOperatingSystem(2015,2018);
-        newOperatingSystem.turnOn();
-        System.out.println(newOperatingSystem.getYearSystem2());
-        newOperatingSystem.closedOldSys();
+        Windows windows = new Windows("Windows 98",1998,2004);
+        windows.turnOn();
+        windows.turnOff();
 
-
+        Android android = new Android("Android 2.0",2002,2004);
+        android.turnOn();
+        android.turnOff();
     }
 }
