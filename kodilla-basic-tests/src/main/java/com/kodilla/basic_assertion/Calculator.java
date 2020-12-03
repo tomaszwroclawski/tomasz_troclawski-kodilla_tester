@@ -9,10 +9,4 @@ public class Calculator {
     public int subtract(int a, int b) {
         return (a - b);
     }
-
-    public double power(double c, double n) {
-        double y = Math.pow(c,n);
-        return y;
-
-    }
 }
