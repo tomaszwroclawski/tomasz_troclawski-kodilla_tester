@@ -1,8 +1,8 @@
 package com.kodilla.collections.homework;
 
 public interface Car {
-    int getSpeed();
-    void increaseSpeed();
-    void decreaseSpeed();
-
+    String getName();
+    int getSpeed();  // prędkość
+    void increaseSpeed(); // prędkość plus
+    void decreaseSpeed();// prędkość minus
 }
