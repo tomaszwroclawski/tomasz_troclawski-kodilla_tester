@@ -11,8 +11,6 @@ import com.kodilla.collections.homework.Opel;
 
 public class CarUtils {
 
-    private static Car ford;
-
     public static void describeCar(Car car) {
 
         System.out.println("---------------------------------------");
@@ -24,26 +22,10 @@ public class CarUtils {
 
     private static String getCarName(Car car) {
 
-        if (car instanceof Ford)
-            return "Ford";
-        else if (car instanceof Audi)
-            return "Audi";
-        else if (car instanceof Opel)
-            return "Opel";
-        else
-            return "Unknown car name";
+            return car.getName();
     }
     public static int getCarIncreaseSpeed(Car car){
-        int a= 5;
-        int b= 2;
-        int c =3 ;
-        if (car instanceof  Ford)
-            return a;
-        else if (car instanceof Audi)
-            return b;
-        else  if(car instanceof Opel)
-            return c;
-        else
-            return 11;
+         return car.getSpeed();
+
     }
 }
