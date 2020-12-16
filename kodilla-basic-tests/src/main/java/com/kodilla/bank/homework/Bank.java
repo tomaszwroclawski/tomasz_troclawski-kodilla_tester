@@ -42,7 +42,7 @@ public class Bank {
             transactions = cashMachines[i].getValues();
             for (int j = 0; j < transactions.length; j++)
             {
-                if (transactions[j] > 0) {
+                if (transactions[j] > 1) {
                     count++;
                 }
 
@@ -54,14 +54,14 @@ public class Bank {
     public double averageOfWithdraw() {
         int sum = 0;
         int count = 0;
-        int[] trasactions;
+        int[] transactions;
 
-        for (int i = 0; i < this.cashMachines.length; i++) {
-            trasactions = cashMachines[i].getValues();
+        for (int i = 1; i < this.cashMachines.length; i++) {
+            transactions = cashMachines[i].getValues();
             for (int j = 0; j < cashMachines[j].getSize(); j++) {
-                if (trasactions[j] < 0) {
+                if (transactions[j] >=0) {
                     count++;
-                    sum = sum + trasactions[j];
+                    sum = sum + transactions[j];
                 }
             }
         }
@@ -77,16 +77,16 @@ public class Bank {
         int count = 0;
         int[] trasactions;
 
-        for (int i = 0; i < this.cashMachines.length; i++) {
+        for (int i = 1; i < this.cashMachines.length; i++) {
             trasactions = cashMachines[i].getValues();
-            for (int j = 0; j < cashMachines[i].getSize(); j++) {
-                if (trasactions[j] < 0) {
+            for (int j = 0; j < cashMachines[j].getSize(); j++) {
+                if (trasactions[j] >= 0) {
                     count++;
                     sum = sum + trasactions[j];
                 }
             }
         }
-        if (count == 0) {
+        if (count ==0) {
             return 0;
         } else {
             return (double) sum / count;
