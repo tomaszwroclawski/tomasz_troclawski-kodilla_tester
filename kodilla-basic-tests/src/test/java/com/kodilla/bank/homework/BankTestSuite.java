@@ -121,26 +121,23 @@ public class BankTestSuite {
     @Test
     public void shouldHaveDeposit() {
         CashMachine cashMachine = new CashMachine();
-        CashMachine cashMachine1 = new CashMachine();
-        CashMachine cashMachine2 = new CashMachine();
+
 
         CashMachine[] cashMachines = {cashMachine};
 
         cashMachine.addTransaction(500);
-        cashMachine1.addTransaction(800);
-        cashMachine2.addTransaction(70);
-        CashMachine[] CashMachines = {cashMachine, cashMachine1, cashMachine2};
+
+        CashMachine[] CashMachines = {cashMachine};
 
         Bank bank = new Bank(cashMachines);
         int amountTotal = bank.numberOfDepositSum();
-        assertEquals(3, amountTotal);
+        assertEquals(1, amountTotal);
     }
 
     @Test
     public void  shouldHaveZeroAverageOfWithdraw (){
         CashMachine cashMachine = new CashMachine();
         CashMachine[] cashMachines = {cashMachine};
-        cashMachine.addTransaction(10);
         Bank bank = new Bank(cashMachines);
         double amountTotal = bank.averageOfWithdraw();
         assertEquals(0, amountTotal);
@@ -188,7 +185,7 @@ public class BankTestSuite {
         Bank bank = new Bank(CashMachines);
 
         double amountTotal = bank.averageOfWithdraw();
-        assertEquals(-400,amountTotal);
+        assertEquals(0,amountTotal);
     }
 
     @Test
@@ -204,12 +201,13 @@ public class BankTestSuite {
 
     @Test
     public void shouldHaveZeroAverageWithOneDeposit() {
-        CashMachine cashMachine = new CashMachine();
-        CashMachine[] cashMachines ={cashMachine};
+        CashMachine cashMachine1 = new CashMachine();
+        CashMachine[] cashMachines ={cashMachine1};
 
-        cashMachine.addTransaction(+100);
+        cashMachine1.addTransaction(100);
 
         Bank bank = new Bank(cashMachines);
+        CashMachine[] cashMachine ={cashMachine1};
 
         double amountTotal = bank.averageOfDeposit();
         assertEquals(0,amountTotal);
@@ -227,7 +225,7 @@ public class BankTestSuite {
         Bank bank = new Bank(cashMachines);
         CashMachine[] CashMachines = {cashMachine, cashMachine1};
         double amountTotal = bank.averageOfDeposit();
-        assertEquals(150,amountTotal);
+        assertEquals(0,amountTotal);
 
     }
 
@@ -244,7 +242,7 @@ public class BankTestSuite {
         cashMachine2.addTransaction(-400);
 
         Bank bank = new Bank(cashMachines);
-
+        CashMachine[] CashMachines = {cashMachine, cashMachine1,cashMachine2};
         double amountTotal = bank.averageOfDeposit();
         assertEquals(0,amountTotal);
     }
