@@ -3,34 +3,36 @@ package com.kodilla.collections.adv.maps.homework;
 import java.util.Objects;
 
 public class Princip {
-    private String name;
-    private String lastname;
+    private String namePrincip;
+    private String lastnamePrincip;
 
-    public Princip (String name, String lastname){
-        this.name = name;
-        this.lastname = lastname;
 
-    }
+    public Princip (String namePrincip, String lastnamePrincip){
+        this.namePrincip = namePrincip;
+        this.lastnamePrincip = lastnamePrincip;
+
+      }
 
 
     @Override
-    public boolean equals(Object p) {
-        if (this == p)
-            return true;
-        if (p == null || getClass() != p.getClass())
-            return false;
-        Princip princip = (Princip) p;
-        return Objects.equals(name, princip.name) && Objects.equals(lastname, princip.lastname);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Princip princip = (Princip) o;
+        return Objects.equals(namePrincip, princip.namePrincip) &&
+                Objects.equals(lastnamePrincip, princip.lastnamePrincip);
     }
-        @Override
-        public int hashCode() {
-            return Objects.hash(name, lastname);
-        }
-        public String getName() {
-            return name;
-        }
-        public String getLastname()
-        {
-            return lastname;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(namePrincip, lastnamePrincip);
+    }
+
+    public String getNamePrincip() {
+        return namePrincip;
+    }
+
+    public String getLastnamePrincip() {
+        return lastnamePrincip;
     }
 }

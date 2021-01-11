@@ -6,28 +6,41 @@ import java.util.Map;
 
 public class SchoolDirectory {
     public static void main(String[] args) {
-        Map<Princip, School> boss = new HashMap<>();
-        Princip boss1 = new Princip("Eric","Laasaar");
-        Princip boss2 = new Princip("Johanes", "Wartburg");
-        Princip boss3 = new Princip ("Julia","Tegawara");
-        Princip boss4 = new Princip("Pergamin","Jasnypapier");
+        Map<Princip, School> principSchoolMap = new HashMap<>();
 
-        School boss1School = new School("SP1","SP5","Uniwersytet 4 wieku","SPZ-2 szkoła poszukiwaczy zlota");
-        School boss2School = new School("SP8","SP9","Poligonowa szkoła rzucania granatem");
-        School boss3School = new School("SP13","LO987","Szkoła Przyspobienia do Zawodu","Szkoła dla panien z dobrego domu");
-        School boss4School = new School("DC4","KWS23","Małe przedszkole 34");
+        Princip boss1 = new Princip("John","Pergamin");
+        Princip boss2 = new Princip("Katrin","FreeMoon");
+        Princip boss3 = new Princip("Ken","Marnylion");
 
-        boss.put(boss1,boss1School);
-        boss.put(boss2,boss2School);
-        boss.put(boss3,boss3School);
-        boss.put(boss4,boss4School);
+        School school1 = new School("London Mix23");
+        school1.AddClassQuantity(58);
+        school1.AddClassQuantity(98);
+        school1.AddClassQuantity(25);
+        school1.AddClassQuantity(47);
 
-        System.out.println(boss.get(boss2));
+        School school2 = new School("BarryCollege only for Man");
+        school2.AddClassQuantity(78);
+        school2.AddClassQuantity(78);
+        school2.AddClassQuantity(23);
+        school2.AddClassQuantity(14);
 
-        System.out.println(boss.get(boss3));
+        School school3 = new School("Woman College");
+        school3.AddClassQuantity(23);
+        school3.AddClassQuantity(12);
+        school3.AddClassQuantity(56);
+        school3.AddClassQuantity(17);
+
+        principSchoolMap.put(boss1,school1);
+        principSchoolMap.put(boss2,school3);
+        principSchoolMap.put(boss3,school2);
+
+        for (Map.Entry<Princip,School> mapElement : principSchoolMap.entrySet()){
+            System.out.println(mapElement.getKey().getNamePrincip()+","+mapElement.getKey().getLastnamePrincip()+",Dyrektor: "+
+                    mapElement.getValue().getSchoolName()+" ; actual summary of Pupils / Students:  "+ mapElement.getValue().SumOfPupils());
 
 
-        for(Map.Entry<Princip,School> principEntry: boss.entrySet())
-        System.out.println(principEntry.getKey().getName()+"  " +principEntry.getKey().getLastname()+"  "+principEntry.getValue());
+        }
+
     }
-}
+    }
+

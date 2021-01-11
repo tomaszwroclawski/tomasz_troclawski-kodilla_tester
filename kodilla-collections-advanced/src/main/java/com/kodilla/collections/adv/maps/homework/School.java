@@ -4,18 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class School {
-    private List<String> school = new ArrayList<>();
+    private ArrayList<Integer> numberOfPupils = new ArrayList<Integer>();
+   private String schoolName;
 
-    public School(String...school){
-        for (String schools : school)
-            this.school.add(schools);
+   public School (String schoolName){
+       this.schoolName = schoolName;
+
+   }
+
+    public String getSchoolName() {
+        return schoolName;
     }
-
-    @Override
-    public String toString() {
-        return "School:  " +
-               school.toString() ;
+    public void AddClassQuantity (int numberOfPupil){
+       this.numberOfPupils.add(numberOfPupil);
     }
-
-
+    public int SumOfPupils (){
+       int totalNumberOfPupils = 0;
+       int i;
+       for( i=0;i<numberOfPupils.size(); i++){
+           totalNumberOfPupils += numberOfPupils.get(i);
+       }
+       return  totalNumberOfPupils;
+    }
 }
+
