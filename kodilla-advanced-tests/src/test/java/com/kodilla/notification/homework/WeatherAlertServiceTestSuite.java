@@ -11,8 +11,9 @@ import java.util.Set;
 
 
 class WeatherAlertServiceTestSuite {
+    //WeatherAlertService weatherAlertService =Mockito.mock(WeatherAlertService.class);
     WeatherAlertService weatherAlertService = new WeatherAlertService();
-    User userA = Mockito.mock(User.class);
+    User user = Mockito.mock(User.class);
     User userB = Mockito.mock(User.class);
     User userC = Mockito.mock(User.class);
     User userD = Mockito.mock(User.class);
@@ -20,13 +21,13 @@ class WeatherAlertServiceTestSuite {
 
     Alert alert = Mockito.mock(Alert.class);
 
-    Location location1 = Mockito.mock(Location.class);
+    Location location = Mockito.mock(Location.class);
     Location location2 = Mockito.mock(Location.class);
 
     Set<User> users = new HashSet<>();
     Set<Location> locations = new HashSet<>();
-    User user;
-    Location location;
+   // User user;
+    //Location location;
 
     @BeforeAll
     public static void displayIntro() {
@@ -35,13 +36,13 @@ class WeatherAlertServiceTestSuite {
 
     @BeforeEach
     public void prepareDataUserAndLocation() {
-        users.add(userA);
+        users.add(user);
         users.add(userB);
         users.add(userC);
         users.add(userD);
         users.add(userE);
 
-        locations.add(location1);
+        locations.add(location);
         locations.add(location2);
 
         for (Location location : locations) {
@@ -64,21 +65,21 @@ class WeatherAlertServiceTestSuite {
         for (Location location : locations) {
             weatherAlertService.sendNotificationToLocation(alert, location);
         }
-        Mockito.verify(user, Mockito.times(1)).receive(alert);
+        Mockito.verify(userD, Mockito.times(0)).receive(alert);
     }
 
     @Test
     public void shouldSentNotificationToAllSubscribers() {
-        weatherAlertService.addUser(userA, location1);
+        weatherAlertService.addUser(user, location);
         weatherAlertService.addUser(userB, location2);
         weatherAlertService.addUser(userC, location2);
-        weatherAlertService.addUser(userD, location1);
-        weatherAlertService.addUser(userE, location1);
+        weatherAlertService.addUser(userD, location);
+        weatherAlertService.addUser(userE, location);
 
         weatherAlertService.sendNotificationToAll(alert);
 
         for (User user : this.users) {
-            Mockito.verify(user, Mockito.times(2)).receive(alert);
+            Mockito.verify(user, Mockito.times(1)).receive(alert);
         }
 
     }
@@ -103,7 +104,7 @@ class WeatherAlertServiceTestSuite {
             weatherAlertService.sendNotificationToLocation(alert, location);
         }
 
-        Mockito.verify(user, Mockito.never()).receive(alert);
+        Mockito.verify(userB, Mockito.never()).receive(null);
     }
 
     @AfterAll

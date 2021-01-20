@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class WeatherAlertService {
-    private  HashMap<User, Set<Location>> userInLocation = new HashMap<>();
+    private final HashMap<User, Set<Location>> userInLocation = new HashMap<>();
 
     public void addUser (User user, Location location ){
         userInLocation.computeIfAbsent(user, k->new HashSet<>()).add(location);
@@ -16,6 +16,7 @@ public class WeatherAlertService {
                 .stream()
                 .filter(entry -> entry.getValue().contains(location))
                 .forEach(entry -> entry.getKey().receive(alert));
+
     }
     public void sendNotificationToAll(Alert alert){
         userInLocation.entrySet()
